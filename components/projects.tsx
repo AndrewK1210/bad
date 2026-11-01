@@ -10,7 +10,6 @@ const filters: ('All' | Discipline)[] = ['All', 'Hardware', 'Software', 'Mechani
 
 export function Projects() {
   const [filter, setFilter] = useState<(typeof filters)[number]>('All')
-  const [openId, setOpenId] = useState<string | null>(null)
 
   const visible =
     filter === 'All' ? projects : projects.filter((p) => p.disciplines.includes(filter))
@@ -20,9 +19,7 @@ export function Projects() {
       <SectionHeading index="02" title="Selected Projects" id="projects-title" />
 
       <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-muted-foreground">
-          Click a card to open the build notes.
-        </p>
+        <p className="text-sm text-muted-foreground">Open a project for the full technical write-up.</p>
         <div role="group" aria-label="Filter projects by discipline" className="flex flex-wrap gap-2">
           {filters.map((f) => {
             const count =
@@ -32,10 +29,7 @@ export function Projects() {
                 key={f}
                 type="button"
                 aria-pressed={filter === f}
-                onClick={() => {
-                  setFilter(f)
-                  setOpenId(null)
-                }}
+                onClick={() => setFilter(f)}
                 className={cn(
                   'rounded-full border px-3 py-1 font-mono text-xs transition-colors',
                   filter === f
@@ -50,15 +44,9 @@ export function Projects() {
         </div>
       </div>
 
-      <ul className="grid gap-4 md:grid-flow-dense md:grid-cols-2">
+      <ul className="grid gap-4 md:grid-cols-2">
         {visible.map((project) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            index={projects.indexOf(project) + 1}
-            open={openId === project.id}
-            onToggle={() => setOpenId((id) => (id === project.id ? null : project.id))}
-          />
+          <ProjectCard key={project.slug} project={project} index={projects.indexOf(project) + 1} />
         ))}
       </ul>
     </section>

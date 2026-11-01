@@ -16,7 +16,7 @@ export default function Page() {
       </main>
       <footer className="mx-auto max-w-5xl px-6 py-10">
         <div className="flex flex-col gap-2 border-t pt-6 font-mono text-xs text-muted-foreground sm:flex-row sm:justify-between">
-          <span>© {new Date().getFullYear()} Alex Rivera</span>
+          <span>© {new Date().getFullYear()} Jordan Lee</span>
           <span>Designed &amp; built in Oakland, CA</span>
         </div>
       </footer>

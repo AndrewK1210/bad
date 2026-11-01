@@ -1,28 +1,34 @@
 import { ArrowDownRight } from 'lucide-react'
+import { CrosshairField } from '@/components/crosshair-field'
+import { LocalClock } from '@/components/local-clock'
 
 const facts = [
   { label: 'Focus', value: 'Robotics, embedded systems' },
   { label: 'Currently', value: 'Controls Engineer @ Kinetic Labs' },
   { label: 'Education', value: 'B.S. Mechatronics, UC Davis' },
-  { label: 'Based in', value: 'Oakland, CA' },
 ]
 
 export function About() {
   return (
-    <section id="about" aria-labelledby="about-title" className="pb-24 pt-20 sm:pt-28">
-      <p className="mb-6 flex items-center gap-2 font-mono text-xs text-muted-foreground">
-        <span className="relative flex size-2">
-          <span className="absolute inline-flex size-full animate-ping rounded-full bg-signal opacity-60 motion-reduce:hidden" />
-          <span className="relative inline-flex size-2 rounded-full bg-signal" />
-        </span>
-        Open to new roles — 2026
-      </p>
-      <h1
-        id="about-title"
-        className="max-w-3xl text-balance text-4xl font-medium leading-[1.1] tracking-tight sm:text-6xl"
-      >
-        I&apos;m Alex — an engineer who builds machines that sense, think, and move.
-      </h1>
+    <section id="about" aria-labelledby="about-title" className="pb-24 pt-10 sm:pt-16">
+      <CrosshairField>
+        <div className="flex min-h-[26rem] flex-col justify-end p-6 sm:min-h-[30rem] sm:p-10">
+          <p className="mb-6 flex items-center gap-2 font-mono text-xs text-muted-foreground">
+            <span className="relative flex size-2">
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-signal opacity-60 motion-reduce:hidden" />
+              <span className="relative inline-flex size-2 rounded-full bg-signal" />
+            </span>
+            Open to new roles — 2026
+          </p>
+          <h1
+            id="about-title"
+            className="max-w-3xl text-balance text-4xl font-medium leading-[1.1] tracking-tight sm:text-6xl"
+          >
+            I&apos;m Jordan — an engineer who builds machines that sense, think, and move.
+          </h1>
+        </div>
+      </CrosshairField>
+
       <div className="mt-10 grid gap-10 md:grid-cols-[1.4fr_1fr]">
         <div className="flex flex-col gap-4 text-pretty leading-relaxed text-muted-foreground">
           <p>
@@ -54,6 +60,15 @@ export function About() {
               <dd className="mt-1.5 text-sm">{fact.value}</dd>
             </div>
           ))}
+          <div className="bg-card p-4">
+            <dt className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
+              Based in
+            </dt>
+            <dd className="mt-1.5 flex flex-col gap-1 text-sm">
+              Oakland, CA
+              <LocalClock />
+            </dd>
+          </div>
         </dl>
       </div>
     </section>

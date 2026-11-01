@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { ArrowUpRight, Check, Copy } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 
-const EMAIL = 'alex@rivera.engineering'
+const EMAIL = 'hello@jordanlee.dev'
 
 const socials = [
   { label: 'GitHub', href: 'https://github.com' },

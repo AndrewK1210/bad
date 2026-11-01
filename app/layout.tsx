@@ -7,9 +7,9 @@ const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
 
 export const metadata: Metadata = {
-  title: 'Alex Rivera — Robotics & Embedded Systems Engineer',
+  title: 'Jordan Lee — Robotics & Embedded Systems Engineer',
   description:
-    'Portfolio of Alex Rivera, an engineer building robots, embedded hardware, and the software that runs them.',
+    'Portfolio of Jordan Lee, an engineer building robots, embedded hardware, and the software that runs them.',
   generator: 'v0.app',
   icons: {
     icon: [
